@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat-a-List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cat-a-List</h1>
+            <div class="profile-container">
+                <img src="profile-icon.png" alt="Profile Icon" class="profile-icon">
+                <div class="dropdown-menu">
+                    <p id="username-display"></p>
+                    <button id="logout-btn" class="btn pink-btn">Logout</button>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="input-group">
+                <input type="text" id="new-task" placeholder="✏ Add a new task...">
+                <input type="date" id="task-date">
+                <input type="text" id="task-category" placeholder="Category ➤">
+                <select id="task-priority">
+                    <option value="low">Less Important ★</option>
+                    <option value="medium">Moderately Important ★★</option>
+                    <option value="high">Highly Important ★★★</option>
+                </select>
+                <button id="add-task-btn">
+                    <img src="cat-paw-icon.png" alt="Add Task">
+                </button>
+            </div>
+            <ul id="task-list"></ul>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+            if (!loggedInUser) {
+                window.location.href = 'landing.html'; // Redirect if not logged in
+            } else {
+                document.getElementById('username-display').textContent = `Welcome, ${loggedInUser.username}`;
+            }
+
+            const profileIcon = document.querySelector('.profile-icon');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+
+            profileIcon.addEventListener('click', () => {
+                dropdownMenu.classList.toggle('show');
+            });
+
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                localStorage.removeItem('loggedInUser'); // Remove logged in user data
+                window.location.href = 'landing.html'; // Redirect to landing page
+            });
+        });
+    </script>
+</body>
+</html>

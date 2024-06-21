@@ -1,0 +1,107 @@
+/* Reset default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background: url('login-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 90%;
+    width: 400px; /* Adjust width as needed */
+    margin: 0 auto; /* Center horizontally */
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    text-align: center;
+    color: #333;
+    margin: 0;
+    padding-bottom: 20px;
+    font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+#login-form {
+    width: 100%;
+    text-align: center; /* Center form elements */
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left; /* Align labels and inputs to the left */
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.login-btn {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    overflow: hidden;
+    width: 200px; /* Adjust width as needed */
+    height: 200px; /* Adjust height as needed */
+}
+
+.login-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Optional: Add transition effect */
+}
+
+.login-btn span {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px; /* Adjust font size as needed */
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease; /* Optional: Add transition effect */
+}
+
+.login-btn:hover img {
+    transform: scale(1.1); /* Optional: Zoom effect on hover */
+}
+
+.login-btn:hover span {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+}
